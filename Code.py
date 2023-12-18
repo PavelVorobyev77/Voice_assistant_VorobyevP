@@ -13,7 +13,7 @@ commands_dict = {
     'commands': {
         'greeting': ['привет', 'приветствую'],
         'create_task': ['добавить задачу', 'создать задачу', 'заметка', 'заметки'],
-        'play_music': ['включить музыку', 'дискотека', 'включи музыку', 'включай музыку'],
+        'play_music': ['включить музыку', 'дискотека', 'включи музыку', 'включай музыку', 'музыка'],
         'create_folder': ['создать папку', 'создай папку'],
         'delete_folder': ['удалить папку', 'удали папку'],
         'delete_file': ['удалить файл', 'удали файл'],
@@ -202,42 +202,43 @@ def delete_file():
 
 
 def main():
-    query = listen_command()
+    while True:
+        query = listen_command()
 
-    for k, v in commands_dict['commands'].items():
-        if query in v:
-            if k == 'greeting':
-                print(greeting())
-                #engine.say(greeting())
-                #engine.runAndWait()
-            elif k == 'create_task':
-                print(create_task())
-                #engine.say(create_task())
-                #engine.runAndWait()
-            elif k == 'play_music':
-                print(play_music())
-                #engine.say(play_music())
-                #engine.runAndWait()
-            elif k == 'create_folder':
-                print(create_folder())
-                #engine.say(create_folder())
-                #engine.runAndWait()
-            elif k == 'create_file':
-                print(create_file())
-                #engine.say(create_file())
-                #engine.runAndWait()
-            elif k == 'delete_folder':
-                print(delete_folder())
-                #engine.say(delete_folder())
-                #engine.runAndWait()
-            elif k == 'delete_file':
-                print(delete_file())
-                #engine.say(delete_file())
-                #engine.runAndWait()
-            elif k == 'read_file':
-                print(read_file())
-                #engine.say(read_file())
-                #engine.runAndWait()
+        for k, v in commands_dict['commands'].items():
+            if query in v:
+                if k == 'greeting':
+                    print(greeting())
+                    engine.say(greeting())
+                    engine.runAndWait()
+                elif k == 'create_task':
+                    print(create_task())
+                    #engine.say(create_task())
+                    #engine.runAndWait()
+                elif k == 'play_music':
+                    print(play_music())
+                    #engine.say(play_music())
+                    #engine.runAndWait()
+                elif k == 'create_folder':
+                    print(create_folder())
+                    #engine.say(create_folder())
+                    #engine.runAndWait()
+                elif k == 'create_file':
+                    print(create_file())
+                    #engine.say(create_file())
+                    #engine.runAndWait()
+                elif k == 'delete_folder':
+                    print(delete_folder())
+                    #engine.say(delete_folder())
+                    #engine.runAndWait()
+                elif k == 'delete_file':
+                    print(delete_file())
+                    #engine.say(delete_file())
+                    #engine.runAndWait()
+                elif k == 'read_file':
+                    print(read_file())
+                    #engine.say(read_file())
+                    #engine.runAndWait()
 
 if __name__ == '__main__':
     main()
